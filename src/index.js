@@ -69,7 +69,28 @@ res = 100;
 let data = "date";
 let resOfDate = data;
 // how to deal with with function
+//two num with number type and return is number also
 const addTwoNum = (n1, n2) => {
     return n1 + n2;
+};
+// using void with function
+const display = () => {
+    console.log("i'm mohamed Yasser");
+};
+const checkNumIsPrime = (num) => {
+    let isPrime = true;
+    for (let i = 2; i < num; i++) {
+        if (num % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    return isPrime;
+};
+const evenOrOdd = (num) => {
+    if (num % 2 === 0) {
+        return true;
+    }
+    return false;
 };
 // to run code of js use node path of the file like node "./dist/index.js"..!

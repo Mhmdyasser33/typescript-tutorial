@@ -84,6 +84,48 @@ const employee: Employee = {
   zipCode: 12345,
 };
 
+// using type assertion
+// type assertion : is a way to explicitly tell the compiler the type of a variable or expression.
+let userId : number | string = 10 ;
+// type assertion like type casting in c++
+let res = userId as number ;
+res  = 100 ;
+// another way to use type assertion
+let data : string | boolean = "date" ;
+let resOfDate = <string>data ;
+
+
+// how to deal with with function
+ //two num with number type and return is number also
+const addTwoNum = (n1 : number , n2 : number) : number =>{
+    return n1 + n2 ;
+}
+
+
+// using void with function
+
+const display = () : void =>{
+console.log("i'm mohamed Yasser") ;
+ }
+
+const checkNumIsPrime = (num : number) : boolean=>{
+    let isPrime : boolean = true ;
+    for(let i = 2 ; i < num ; i++){
+        if(num % i == 0){
+            isPrime = false ;
+            break ;
+        }
+    }
+    return isPrime ;
+
+}
+
+const evenOrOdd = (num : number) : boolean =>{
+  if(num % 2 === 0){
+    return true ;
+  }
+ return false
+}
 
 
 
