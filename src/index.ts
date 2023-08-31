@@ -128,6 +128,57 @@ const evenOrOdd = (num : number) : boolean =>{
 }
 
 
+// dealing with interface
+interface date{
+ name : string ,
+ age : number ,
+phone : string
+}
+
+let userInfo : date = {
+  name : "mohamed" ,
+  age : 21 ,
+  phone : "01000000000"
+}
+userInfo.age = 22 ;
+
+interface Student {
+ readonly stdAge : number , // this will make age readonly mean we can not to change it...!
+  stdName : string ,
+  stdAddress ?:string // this make this variable is optional,if you want to write ok ? don't want to write ? also ok....!
+
+}
+
+const student : Student = {
+  stdAge : 21 ,
+  stdName : "mohamed" ,
+  stdAddress: "cairo"
+}
+// student.stdAge = 22 ;// this will give an error because it readonly
+
+// how to deal with interface in function
+
+interface MathFun {
+   // we will use it for function ? create this ()
+   (x : number) : number
+}
+
+const multiplyByTwo : MathFun = (num : number) : number =>{
+  return num * 2 ;
+}
+
+interface Check{
+  (Name : string) : string
+}
+
+const func : Check = (name : string) : string  =>{
+  if(name.startsWith("m")){
+     return "name start with m" ;
+  }else{
+    return "name start with m" ;
+  }
+}
+
 
 
 
