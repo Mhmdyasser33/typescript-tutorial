@@ -115,4 +115,78 @@ const func = (name) => {
         return "name start with m";
     }
 };
+// dealing with class and constructor
+class Info {
+    constructor(id, Name) {
+        this.id = id;
+        this.Name = Name;
+    }
+}
+const p1 = new Info(1, "mohamed");
+console.log(p1);
+console.log(`your id is ${id} and your name is ${Name}`);
+// ====================  another example ======================
+class Person {
+    constructor(address, zipCode) {
+        this.add = address;
+        this.zc = zipCode;
+    }
+    setAddressVariable(Address) {
+        this.add = Address;
+    }
+    getAddressVariable() {
+        return this.add;
+    }
+}
+const p3 = new Person("cairo", 123);
+p3.setAddressVariable("cairo");
+console.log("your address is", p3.getAddressVariable());
+class InfoDate {
+    constructor(id, Name) {
+        this.id = id;
+        this.Name = Name;
+    }
+    login() {
+        return `${this.Name} is login successfully`;
+    }
+}
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    eat() {
+        return `${this.name} is eating`;
+    }
+}
+class Cat extends Animal {
+    constructor(name, type) {
+        super(name);
+        this.type = type;
+    }
+}
+const C1 = new Cat("cat", "Pet");
+console.log(C1.eat());
+//dealing with generics
+// this function take an array and return new array
+/* const getArray = (items: any[]) : any[] =>{
+  return new Array().concat(items)
+}
+
+let numArray = getArray([1,2,4,5]) ;
+let strArray = getArray(["mohamed" , "ahmed" , "marwan"]) ;
+
+numArray.push("mahmoud") ;
+strArray.push(10) ;
+console.log(numArray) ;
+console.log(stringArr) ; */
+// after using generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 4, 5]);
+let strArray = getArray(["mohamed", "ahmed", "marwan"]);
+numArray.push(100);
+strArray = strArray.concat(["Mahmoud", "kareem"]);
+console.log(numArray);
+console.log(strArray);
 // to run code of js use node path of the file like node "./dist/index.js"..!

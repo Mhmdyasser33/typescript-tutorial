@@ -180,11 +180,113 @@ const func : Check = (name : string) : string  =>{
 }
 
 
+// dealing with class and constructor
+
+class Info {
+  id : number
+  Name : string
+constructor(id : number , Name : string){
+  this.id = id ;
+  this.Name = Name ;
+}
+}
+
+const p1 = new Info(1 , "mohamed") ;
+console.log(p1) ;
+console.log(`your id is ${id} and your name is ${Name}`) ;
+
+// ====================  another example ======================
+
+class Person{
+  private add ; // we can use protected add
+  private zc ;
+  constructor(address : string , zipCode : number){
+    this.add = address
+    this.zc = zipCode
+  }
+  setAddressVariable(Address : string){
+   this.add = Address ;
+  }
+  getAddressVariable(){
+    return this.add
+   }
+}
+
+const p3 = new Person("cairo" , 123) ;
+p3.setAddressVariable("cairo") ;
+console.log("your address is" , p3.getAddressVariable()) ;
+
+// using interface with classes
+  interface infoDateInterface {
+    id : number
+    Name : string
+    login() : string
+  }
+class InfoDate implements infoDateInterface {
+   id : number
+  Name : string
+
+  constructor(id : number , Name : string){
+    this.id = id ;
+    this.Name = Name ;
+  }
+  login() : string {
+   return `${this.Name} is login successfully` ;
+  }
+}
+
+// super || main class
+
+interface seeAnimal{
+  name : string
+}
+class Animal implements seeAnimal{
+  name : string
+  constructor(name : string){
+    this.name = name ;
+  }
+  eat() : string{
+    return `${this.name} is eating` ;
+  }
+}
+
+class Cat extends Animal{
+  type : string
+  constructor(name : string , type : string ){
+    super(name) ;
+    this.type =type
+  }
+}
+const C1 = new Cat("cat" , "Pet") ;
+console.log(C1.eat())
 
 
+//dealing with generics
+// this function take an array and return new array
+/* const getArray = (items: any[]) : any[] =>{
+  return new Array().concat(items)
+}
 
+let numArray = getArray([1,2,4,5]) ;
+let strArray = getArray(["mohamed" , "ahmed" , "marwan"]) ;
 
+numArray.push("mahmoud") ;
+strArray.push(10) ;
+console.log(numArray) ;
+console.log(stringArr) ; */
 
+// after using generics
+function getArray<T>(items: T[]): T[] {
+  return new Array().concat(items)
+}
 
+let numArray = getArray<number>([1, 2, 4, 5]);
+let strArray = getArray<string>(["mohamed", "ahmed", "marwan"]);
+
+numArray.push(100);
+strArray = strArray.concat(["Mahmoud" , "kareem"]);
+
+console.log(numArray);
+console.log(strArray);
 
 // to run code of js use node path of the file like node "./dist/index.js"..!
